@@ -35,3 +35,23 @@
 6. Jelaskan konsep "hot reload" di Flutter dan bagaimana bedanya dengan "hot restart".
    = Hot reload memungkinkan pengembang melihat perubahan kode secara langsung tanpa kehilangan state aplikasi, sehingga sangat berguna untuk mengedit tampilan dengan cepat. 
      Sedangkan hot restart akan memulai ulang seluruh aplikasi dan menghapus semua state yang tersimpan. Keduanya mempercepat proses pengembangan karena perubahan dapat langsung diuji tanpa menutup aplikasi.
+
+
+# Tugas 8
+
+1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+= Navigator.push() dipakai buat nambah halaman baru di atas stack, jadi user masih bisa balik ke halaman sebelumnya. Kalau Navigator.pushReplacement(), 
+  halaman sebelumnya langsung diganti dan gak bisa dibalikin lagi. Di aplikasi Football Shop, push() cocok buat buka halaman form tambah produk dari menu utama, 
+  sementara pushReplacement() lebih cocok buat navigasi lewat drawer biar pindah halaman langsung tanpa bisa balik ke halaman lama.
+
+2. Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+= saya pakai Scaffold sebagai struktur dasar biar setiap halaman punya layout yang konsisten. AppBar jadi header utama buat nampilin judul dan identitas aplikasi, 
+  sedangkan Drawer saya pakai buat navigasi antar halaman biar user gampang pindah dari halaman utama ke halaman tambah produk dan sebaliknya.
+
+3. Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+= Padding ngebantu ngasih jarak biar form gak terlalu rapet dan enak dilihat. SingleChildScrollView penting banget biar form bisa discroll kalau isinya banyak, jadi gak kena overflow di layar kecil. Kalau datanya banyak banget, 
+  bisa pakai ListView biar elemen form bisa ditampilkan dengan efisien dan tetap bisa discroll dengan lancar.
+
+4. Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+= Warna utama aplikasi saya sesuaikan biar konsisten sama identitas brand FajarWearShop. Misalnya, saya pakai warna indigo atau oranye buat AppBar dan tombol supaya tampilannya khas dan kelihatan punya karakter sendiri, 
+  jadi kesannya gak plain dan punya ciri khas toko FajarWearShop itu sendiri.

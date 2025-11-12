@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fajarwearshop/menu.dart';
+import 'package:fajarwearshop/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());

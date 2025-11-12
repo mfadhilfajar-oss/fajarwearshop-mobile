@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fajarwearshop/widgets/left_drawer.dart';
+import 'package:fajarwearshop/screens/productslist_form.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
@@ -10,7 +12,7 @@ class MyHomePage extends StatelessWidget {
   final List<ItemHomepage> items = [
     ItemHomepage("All Products", Icons.shopping_cart_checkout, Colors.blue),
     ItemHomepage("My Products", Icons.inventory, Colors.green),
-    ItemHomepage("Create Products", Icons.add_box, Colors.red),
+    ItemHomepage("Tambah Produk", Icons.add_box, Colors.red),
   ];
 
   @override
@@ -26,6 +28,7 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      drawer: const LeftDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -124,6 +127,15 @@ class ItemCard extends StatelessWidget {
             ..showSnackBar(
               SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!")),
             );
+
+          if (item.name == "Tambah Produk") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProductFormPage(),
+              ),
+            );
+          }
         },
         child: Container(
           padding: const EdgeInsets.all(8),
