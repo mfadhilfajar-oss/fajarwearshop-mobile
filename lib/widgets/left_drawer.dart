@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fajarwearshop/screens/menu.dart';
 import 'package:fajarwearshop/screens/productslist_form.dart';
+import 'package:fajarwearshop/screens/products_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -16,7 +17,7 @@ class LeftDrawer extends StatelessWidget {
               children: [
                 Text('FajarWearShop', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white)),
                 Padding(padding: EdgeInsets.all(8)),
-                Text('Seluruh produk FajarWearShop di sini!', textAlign: TextAlign.center, style: TextStyle(fontSize: 14, color: Colors.white)),
+                Text('Seluruh produk FajarWearShop ada di sini!', textAlign: TextAlign.center, style: TextStyle(fontSize: 14, color: Colors.white)),
               ],
             ),
           ),
@@ -33,7 +34,18 @@ class LeftDrawer extends StatelessWidget {
             title: const Text('Tambah Produk'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ProductFormPage()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ProductsFormPage()));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Products List'),
+            onTap: () {
+              // Route to news list page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductsEntryListPage()),
+              );
             },
           ),
         ],
